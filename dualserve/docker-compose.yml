@@ -1,0 +1,24 @@
+services:
+  spring-api:
+    build: ./spring-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - django-ml
+    environment:
+      - DJANGO_ML_URL=http://django-ml:8000/score/
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  django-ml:
+    build: ./django-ml
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/score/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5 

@@ -1,0 +1,8 @@
+django
+djangorestframework
+gunicorn
+onnxruntime
+scikit-learn
+pytest
+pytest-django
+numpy 
