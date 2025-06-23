@@ -14,13 +14,6 @@ dualserve/
 
 Spring Boot API: REST endpoints, WebSocket for real-time alerts, SQLite database, health monitoring. Django ML Service: ONNX model inference, anomaly detection scoring, REST API endpoints. Isolation Forest: ML model for detecting anomalies in feature vectors. Docker Compose: Service orchestration with health checks and service discovery.
 
-**Quick Start**
-
-git clone <your-repo-url>
-cd dualserve
-docker compose up --build
-Services: Spring API (8080), Django ML (8000), API Docs (8080/swagger-ui.html)
-
 **API Endpoints**
 
 POST /metrics - Submit data for anomaly detection
